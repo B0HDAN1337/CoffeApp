@@ -36,5 +36,17 @@ class activity_menubutton : AppCompatActivity() {
             startActivity(intent)
         }
 
+        logoutBtn.setOnClickListener{
+            val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
+
+            val intent = Intent(this, login_activity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+
     }
 }
