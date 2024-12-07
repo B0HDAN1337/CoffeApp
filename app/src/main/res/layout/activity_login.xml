@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#363636"
+    tools:context=".login_activity">
+
+    <ImageButton
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="320dp"/>
+
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="137dp"
+        android:fontFamily="@font/lobster"
+        android:text="Welcome Back!"
+        android:textColor="#F5EDDA"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="137dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textLogin"
+        android:layout_marginTop="76dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="14sp"
+            android:textColor="#F5EDDA"/>
+        
+        <EditText
+            android:id="@+id/inputE"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/inputbackground"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:text="@string/password"
+            android:textSize="14sp"
+            android:textColor="#F5EDDA"/>
+
+        <EditText
+            android:id="@+id/inputPsw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/inputbackground"
+            android:inputType="text" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remember_me"
+            android:layout_marginTop="180dp"
+            android:textSize="14sp"
+            android:textColor="#F5EDDA"/>
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="227dp"
+        android:layout_height="63dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frameLogin"
+        android:background="@drawable/background_button_login"
+        android:text="Ok!"
+        android:textSize="36sp"
+        android:fontFamily="@font/lobster"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:layout_marginTop="300dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

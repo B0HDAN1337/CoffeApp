@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CoffeeAdpp</string>
+    <string name="register_me">Register Me!</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="create">Create!</string>
+    <string name="about"> <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla praesent feugiat porttitor velit urna ultrices. Leo pulvinar commodo scelerisque at feugiat lacus. Pretium egestas est interdum senectus  </b>
+    <br>Scelerisque metus non egestas enim laoreet. Pulvinar id faucibus libero erat. Massa vulputate volutpat in mi. Placerat est at morbi massa rhoncus at est leo. Molestie tellus bibendum orci nullam aenean. Elit, est, condimentum at congue at tellus. Diam sit pretium cras egestas scelerisque scelerisque aliquam enim. Nulla volutpat nunc enim netus adipiscing.</br>
+    Facilisis nunc non maecenas massa. Phasellus tortor, tortor pretium orci lectus turpis turpis. Quam eu, etiam nisl a diam feugiat. Vitae quis arcu dolor, sit dui tristique. Cras vestibulum ipsum feugiat tincidunt dui arcu massa nulla. Venenatis et porta ut lorem massa praesent pellentesque. Eros non aliquam, enim faucibus tristique. Commodo consectetur vel sit euismod. Morbi elementum gravida nunc, eu felis lacus tortor et. Auctor nunc fames porta mauris scelerisque dolor nibh. Elementum eget dui lorem mattis commodo diam et consectetur. Ultricies libero id gravida vivamus felis, vulputate proin ullamcorper.
+    </string>
+</resources>
