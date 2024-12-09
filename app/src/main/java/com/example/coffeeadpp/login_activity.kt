@@ -6,11 +6,13 @@ import android.widget.ImageButton
 import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.reflect.typeOf
 
 
 class login_activity : AppCompatActivity() {
@@ -27,15 +29,16 @@ class login_activity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        val closeBtn: ImageButton = findViewById(R.id.closeButton)
         val inputPsw: EditText = findViewById(R.id.inputPsw)
         val emailInpt: EditText = findViewById(R.id.inputE)
         val loginBtn: Button = findViewById(R.id.loginButton)
+        val registerBtn: TextView = findViewById(R.id.registerText)
 
         dbHelper = DataBaseHelper(this)
 
-        closeBtn.setOnClickListener{
-            finish()
+        registerBtn.setOnClickListener{
+            val intent = Intent(this, register_activity::class.java)
+            startActivity(intent)
         }
 
         loginBtn.setOnClickListener{
@@ -48,6 +51,11 @@ class login_activity : AppCompatActivity() {
                 Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, activity_coffeemenu::class.java)
                 startActivity(intent)
+
+                val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putBoolean("isLoggedIn", true)
+                editor.apply()
             } else {
                 Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
             }

@@ -5,6 +5,7 @@ import android.widget.ImageButton
 import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,15 +25,16 @@ class register_activity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_register)
 
-        val closeBtn : ImageButton = findViewById(R.id.closeButton)
         val registerBtn : Button = findViewById(R.id.buttonCreateRegister)
         val nameRegisterText : EditText = findViewById(R.id.nameRegisterInput)
         val emailRegisterText : EditText = findViewById(R.id.emailRegisterInput)
         val passwordRegisterText : EditText = findViewById(R.id.passwordRegisterInput)
         val passwordConfText : EditText = findViewById(R.id.confirmInput)
+        val loginBtn : TextView = findViewById(R.id.loginInText)
 
-        closeBtn.setOnClickListener{
-            finish()
+        loginBtn.setOnClickListener{
+            val intent = Intent(this, login_activity::class.java)
+            startActivity(intent)
         }
 
         dbHelper = DataBaseHelper(this)
