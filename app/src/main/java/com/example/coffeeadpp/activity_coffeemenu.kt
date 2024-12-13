@@ -25,12 +25,18 @@ class activity_coffeemenu : AppCompatActivity() {
 
         val menuBtn: ImageButton = findViewById(R.id.menubutton)
         val cartCountText: TextView = findViewById(R.id.cartCount)
+        val cartBtn: ImageView = findViewById(R.id.cartIcon)
 
+        cartBtn.setOnClickListener{
+            val intent = Intent(this, activity_ordercart::class.java)
+            startActivity(intent)
+        }
 
         menuBtn.setOnClickListener{
             val intent = Intent(this, activity_menubutton::class.java)
             startActivity(intent)
         }
+
         // Buttons to add to cart
         val espressoBtnAdd: ImageButton = findViewById(R.id.buttonEspresso)
         val doppioBtnAdd: ImageButton = findViewById(R.id.buttonDopio)
