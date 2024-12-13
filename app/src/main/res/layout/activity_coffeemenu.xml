@@ -36,6 +36,32 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="100dp"/>
 
+    <ImageView
+        android:id="@+id/cartIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/cart_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:id="@+id/cartCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:background="@drawable/cart_count_background"
+        android:gravity="center"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        android:padding="2dp" />
+
+
     <!-- Coffee add buttons like menu -->
     <FrameLayout
         android:layout_width="349dp"
