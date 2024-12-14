@@ -20,6 +20,7 @@
         android:layout_marginStart="30dp"/>
 
     <TextView
+        android:id="@+id/cartTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,5 +32,45 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="48sp" />
+
+    <!-- Here you will dynamically add the items ordered -->
+    <LinearLayout
+        android:id="@+id/cartItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/cartTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: $0.00"
+        android:textSize="36sp"
+        android:fontFamily="@font/lobster"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cartItems"
+        android:layout_marginTop="450dp" />
+
+    <Button
+        android:layout_width="227dp"
+        android:layout_height="63dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalPrice"
+        android:layout_marginTop="40dp"
+        android:text="Take my money!"
+        android:textAllCaps="false"
+        android:fontFamily="@font/lobster"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:background="#98694F"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
