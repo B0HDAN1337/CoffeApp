@@ -2,6 +2,8 @@ package com.example.coffeeadpp
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.graphics.Typeface
+import androidx.core.content.res.ResourcesCompat
 import android.content.Intent
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -20,6 +22,9 @@ class activity_ordercart : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_ordercart)
 
+        val lobster = ResourcesCompat.getFont(this, R.font.lobster)
+
+
         val cartItems = intent.getSerializableExtra("cartItems") as ArrayList<CartItem>
         val cartItemsLayout: LinearLayout = findViewById(R.id.cartItems)
         val backBtn: ImageButton = findViewById(R.id.backButton)
@@ -33,8 +38,9 @@ class activity_ordercart : AppCompatActivity() {
 
         cartItems?.forEach { item ->
             val itemTextView = TextView(this)
-            itemTextView.text = "${item.name} - \$${"%.2f".format(item.price)}"
-            itemTextView.textSize = 18f
+            itemTextView.text = "${item.name}............. \$${"%.2f".format(item.price)}"
+            itemTextView.textSize = 30f
+            itemTextView.setTypeface(lobster, Typeface.BOLD_ITALIC)
             cartItemsLayout.addView(itemTextView)
             totalPrice += item.price
         }
