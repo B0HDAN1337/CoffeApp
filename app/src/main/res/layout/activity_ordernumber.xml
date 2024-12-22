@@ -18,10 +18,10 @@
         android:layout_marginTop="120dp"
         android:textSize="20sp"
         android:textColor="@color/white"
-        android:fontFamily="serif"
-        android:text="Order number"/>
+        android:fontFamily="sans-serif-medium"
+        android:text="Order number" />
 
-    <LinearLayout
+    <TextView
         android:id="@+id/orderNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +29,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/order"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/droneOrder"
@@ -55,7 +59,7 @@
         android:textSize="48sp"
         android:fontFamily="@font/lobster" />
 
-    <LinearLayout
+    <TextView
         android:id="@+id/dynamicTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,7 +67,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/buttonOrder"
-        android:layout_margin="140dp"/>
+        android:layout_marginBottom="90dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:fontFamily="@font/montserrat"/>
 
     <Button
         android:id="@+id/buttonOrder"
