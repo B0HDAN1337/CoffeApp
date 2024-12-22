@@ -52,4 +52,10 @@ import android.database.sqlite.SQLiteOpenHelper
         cursor.close()
         return isLoggedIn
     }
-}
+      override fun close() {
+          this.writableDatabase.close()
+          this.readableDatabase.close()
+          super.close()
+      }
+
+  }

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.graphics.Typeface
 import androidx.core.content.res.ResourcesCompat
 import android.content.Intent
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -29,6 +30,12 @@ class activity_ordercart : AppCompatActivity() {
         val cartItemsLayout: LinearLayout = findViewById(R.id.cartItems)
         val backBtn: ImageButton = findViewById(R.id.backButton)
         val totalPriceView: TextView = findViewById(R.id.totalPrice)
+        val takeMoneyBtn: Button = findViewById(R.id.buttonTakeMoney)
+
+        takeMoneyBtn.setOnClickListener{
+            val intent = Intent(this, OrderNumber::class.java)
+            startActivity(intent)
+        }
 
         backBtn.setOnClickListener {
             finish()
