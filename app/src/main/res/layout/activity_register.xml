@@ -8,47 +8,38 @@
     tools:context=".register_activity"
     android:background="#363636">
 
-    <Space
-        android:id="@+id/topSpace"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/textRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/lobster"
         android:text="@string/create_account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topSpace"
         android:textAlignment="center"
         android:textColor="#F5EDDA"
         android:textSize="48sp"
-        android:fontFamily="@font/lobster"/>
+        app:layout_constraintBottom_toTopOf="@id/frameRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/frameRegister"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="137dp"
         android:layout_marginStart="37dp"
         android:layout_marginEnd="37dp"
-        android:layout_marginTop="37dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonCreateRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textRegister">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/name"
-            android:textSize="14sp"
-            android:textColor="#F5EDDA"/>
+            android:textColor="#F5EDDA"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/nameRegisterInput"
@@ -56,15 +47,15 @@
             android:layout_height="50dp"
             android:layout_marginTop="19dp"
             android:background="@drawable/inputbackground"
-            android:inputType="text"/>
+            android:inputType="text" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="92dp"
             android:text="@string/email"
-            android:textSize="14sp"
-            android:textColor="#F5EDDA"/>
+            android:textColor="#F5EDDA"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/emailRegisterInput"
@@ -72,15 +63,15 @@
             android:layout_height="50dp"
             android:layout_marginTop="110dp"
             android:background="@drawable/inputbackground"
-            android:inputType="text"/>
+            android:inputType="text" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="182dp"
             android:text="@string/password"
-            android:textSize="14sp"
-            android:textColor="#F5EDDA"/>
+            android:textColor="#F5EDDA"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/passwordRegisterInput"
@@ -88,15 +79,15 @@
             android:layout_height="50dp"
             android:layout_marginTop="200dp"
             android:background="@drawable/inputbackground"
-            android:inputType="text"/>
+            android:inputType="text" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="270dp"
             android:text="@string/confirm_password"
-            android:textSize="14sp"
-            android:textColor="#F5EDDA"/>
+            android:textColor="#F5EDDA"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/confirmInput"
@@ -104,35 +95,36 @@
             android:layout_height="50dp"
             android:layout_marginTop="290dp"
             android:background="@drawable/inputbackground"
-            android:inputType="text"/>
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/loginInText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="360dp"
             android:clickable="true"
             android:focusable="true"
             android:text="Login In"
-            android:textSize="14sp"
             android:textColor="#F5EDDA"
-            android:layout_marginTop="360dp"
-            android:layout_gravity="end"/>
+            android:textSize="14sp" />
 
     </FrameLayout>
 
     <Button
         android:id="@+id/buttonCreateRegister"
-        android:layout_width="227dp"
-        android:layout_height="63dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frameRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/background_button_login"
-        android:text="@string/create"
-        android:textSize="36sp"
         android:fontFamily="@font/lobster"
-        android:textAllCaps="false"
+        android:text="@string/create"
         android:textAlignment="center"
-        android:layout_marginTop="170dp"/>
+        android:textAllCaps="false"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frameRegister"
+        app:layout_constraintWidth_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
