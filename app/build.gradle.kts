@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.coffeeadpp"
-        minSdk = 24
-        targetSdk = 34
+        minSdk = 23
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
