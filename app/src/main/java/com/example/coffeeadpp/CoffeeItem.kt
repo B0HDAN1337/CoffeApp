@@ -1,4 +1,4 @@
 package com.example.coffeeadpp
 
-class MenuData {
+class CoffeeItem {
 }
