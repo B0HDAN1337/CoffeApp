@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageButton
+        android:id="@+id/buttonAddCoffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/buttonaddcoffee"
+        android:background="@null"
+        android:contentDescription="Add coffee to cart"/>
+
+    <TextView
+        android:id="@+id/coffeeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Espresso ....................... $3.00"
+        android:textSize="22sp"
+        android:fontFamily="@font/lobster"
+        android:textColor="#F5EDDA"
+        android:layout_marginStart="70dp" />
+
+    <TextView
+        android:id="@+id/coffeeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Single shot Espresso"
+        android:textSize="14sp"
+        android:fontFamily="@font/lobster"
+        android:textColor="#F5EDDA"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="70dp"/>
 
 </FrameLayout>

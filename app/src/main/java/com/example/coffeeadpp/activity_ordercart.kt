@@ -26,7 +26,7 @@ class activity_ordercart : AppCompatActivity() {
         val lobster = ResourcesCompat.getFont(this, R.font.lobster)
 
 
-        val cartItems = intent.getSerializableExtra("cartItems") as ArrayList<CartItem>
+        val cartItems = intent.getSerializableExtra("cartItems") as ArrayList<CoffeeItem>
         val cartItemsLayout: LinearLayout = findViewById(R.id.cartItems)
         val backBtn: ImageButton = findViewById(R.id.backButton)
         val totalPriceView: TextView = findViewById(R.id.totalPrice)
