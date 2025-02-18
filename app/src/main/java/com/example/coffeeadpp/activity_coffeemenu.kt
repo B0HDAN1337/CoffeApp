@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat
 class activity_coffeemenu : AppCompatActivity() {
 
     private var cartItemCount = 0
-    val cartItems = mutableListOf<CartItem>()
+    val cartItems = mutableListOf<>()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
