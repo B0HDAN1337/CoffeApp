@@ -11,11 +11,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-class activity_coffeemenu : AppCompatActivity() {
+
+
+class activity_coffeemenu : AppCompatActivity(), OnItemClickListener {
 
     private var cartItemCount = 0
-    val cartItems = mutableListOf<>()
+    val cartItems = mutableListOf<CartItem>()
+    private lateinit var cartCountText: TextView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +30,24 @@ class activity_coffeemenu : AppCompatActivity() {
 
 
         val menuBtn: ImageButton = findViewById(R.id.menubutton)
-        val cartCountText: TextView = findViewById(R.id.cartCount)
+        cartCountText = findViewById(R.id.cartCount)
         val cartBtn: ImageView = findViewById(R.id.cartIcon)
+
+
+        val dataItem = mutableListOf(
+            CartItem("Espresso", 3.00, "Single shot Espresso"),
+            CartItem("Doppio", 5.00, "Double shot Espresso"),
+            CartItem("Macchiato", 4.50, "Espresso with a dollop of milk"),
+            CartItem("Cafe Lattee", 4.50, "Espresso with steamed milk and foam"),
+            CartItem("Cappuccino", 4.00, "Short size latte"),
+            CartItem("Affogato", 5.00, "Esspresso with vanilla ice-cream")
+        )
+
+        val adapterItem = AdapterItem(dataItem, this)
+
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapterItem
 
         cartBtn.setOnClickListener {
             val intent = Intent(this, activity_ordercart::class.java)
@@ -38,43 +59,13 @@ class activity_coffeemenu : AppCompatActivity() {
             val intent = Intent(this, activity_menubutton::class.java)
             startActivity(intent)
         }
-
-        // Buttons to add to cart
-        val espressoBtnAdd: ImageButton = findViewById(R.id.buttonEspresso)
-        val doppioBtnAdd: ImageButton = findViewById(R.id.buttonDopio)
-        val machiattoBtnAdd: ImageButton = findViewById(R.id.buttonMacchiato)
-        val latteBtnAdd: ImageButton = findViewById(R.id.buttonLatte)
-        val cappuccinoBtnAdd: ImageButton = findViewById(R.id.buttonCappuccino)
-        val affogatoBtnAdd: ImageButton = findViewById(R.id.buttonAffogato)
-
-        espressoBtnAdd.setOnClickListener {
-            addToCartCoffee("Esspresso", 3.00, cartCountText)
-        }
-        doppioBtnAdd.setOnClickListener {
-            addToCartCoffee("Doppio", 5.00, cartCountText)
-        }
-        machiattoBtnAdd.setOnClickListener {
-            addToCartCoffee("Machiatto", 4.50, cartCountText)
-        }
-        latteBtnAdd.setOnClickListener {
-            addToCartCoffee("Latte", 4.50, cartCountText)
-        }
-        cappuccinoBtnAdd.setOnClickListener {
-            addToCartCoffee("Cappuccino", 4.00, cartCountText)
-        }
-        affogatoBtnAdd.setOnClickListener {
-            addToCartCoffee("Affogato", 5.00, cartCountText)
-        }
-
-
     }
 
-    private fun addToCartCoffee(name: String, price: Double, cartCountText: TextView) {
-        cartItems.add(CartItem(name, price))
+    override fun onAddToCartClick(item: CartItem) {
+        cartItems.add(item)
         cartItemCount++
         cartCountText.text = cartItemCount.toString()
         animateCartIcon()
-        Toast.makeText(this, "$name added to cart!", Toast.LENGTH_SHORT).show()
     }
 
     private fun animateCartIcon() {

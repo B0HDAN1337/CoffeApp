@@ -8,279 +8,103 @@
     android:background="#98694F"
     tools:context=".activity_coffeemenu">
 
-    <!-- Menu -->
-    <ImageButton
-        android:id="@+id/menubutton"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/iconsMenu"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@null"
-        android:src="@drawable/menustroke"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="320dp"
-        android:layout_marginTop="40dp"/>
+        app:layout_constraintBottom_toTopOf="@id/menuText"
 
+        android:orientation="horizontal">
+    <!-- Menu -->
+        <ImageButton
+            android:id="@+id/menubutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/menustroke"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/cartIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cart_icon"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/cartCount"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/cart_count_background"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:padding="2dp" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Text Menu -->
     <TextView
         android:id="@+id/menuText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/lobster"
         android:text="Menu"
         android:textColor="#F5EDDA"
         android:textSize="48sp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="110dp"/>
+        app:layout_constraintTop_toBottomOf="@id/iconsMenu"
+        app:layout_constraintBottom_toTopOf="@id/recyclerview"/>
 
-    <ImageView
-        android:id="@+id/cartIcon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/cart_icon"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="40dp"
-        android:clickable="true"
-        android:focusable="true"/>
-
-    <TextView
-        android:id="@+id/cartCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:background="@drawable/cart_count_background"
-        android:gravity="center"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"
-        android:padding="2dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuText" />
 
 
     <!-- Coffee add buttons like menu -->
-    <FrameLayout
-        android:layout_width="349dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuText"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp">
-        <!-- Frame Espresso-->
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageButton
-                android:id="@+id/buttonEspresso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                android:src="@drawable/buttonaddcoffee"
-                android:background="@null"/>
 
-            <TextView
-                android:id="@+id/Espresso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Espresso ....................... $3.00"
-                android:textSize="22sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginStart="70dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Single shot Espresso"
-                android:textSize="14sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginTop="28dp"
-                android:layout_marginStart="70dp"/>
-        </FrameLayout>
-
-        <!-- Dopio -->
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp">
-            <ImageButton
-                android:id="@+id/buttonDopio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                android:src="@drawable/buttonaddcoffee"
-                android:background="@null"/>
-
-            <TextView
-                android:id="@+id/Dopio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doppio ......................... $5.00"
-                android:textSize="22sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginStart="70dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Double shot Espresso"
-                android:textSize="14sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginTop="28dp"
-                android:layout_marginStart="70dp"/>
-        </FrameLayout>
-
-        <!-- Macchiato -->
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="140dp">
-            <ImageButton
-                android:id="@+id/buttonMacchiato"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                android:src="@drawable/buttonaddcoffee"
-                android:background="@null"/>
-
-            <TextView
-                android:id="@+id/Macchiato"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Macchiato .................... $4.50"
-                android:textSize="22sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginStart="70dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Espresso with a dollop of milk"
-                android:textSize="14sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginTop="28dp"
-                android:layout_marginStart="70dp"/>
-        </FrameLayout>
-
-        <!-- Coffe Latte -->
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="210dp">
-            <ImageButton
-                android:id="@+id/buttonLatte"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                android:src="@drawable/buttonaddcoffee"
-                android:background="@null"/>
-
-            <TextView
-                android:id="@+id/Latte"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cafe Latte ..................... $4.50"
-                android:textSize="22sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginStart="70dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Espresso with steamed milk and foam"
-                android:textSize="14sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginTop="28dp"
-                android:layout_marginStart="70dp"/>
-        </FrameLayout>
-
-        <!-- Сappuccino -->
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="280dp">
-            <ImageButton
-                android:id="@+id/buttonCappuccino"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                android:src="@drawable/buttonaddcoffee"
-                android:background="@null"/>
-
-            <TextView
-                android:id="@+id/Cappuccino"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cappuccino ................... $4.00"
-                android:textSize="22sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginStart="70dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Short size latte"
-                android:textSize="14sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginTop="28dp"
-                android:layout_marginStart="70dp"/>
-        </FrameLayout>
-
-        <!-- Affogato -->
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="350dp">
-            <ImageButton
-                android:id="@+id/buttonAffogato"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO"
-                android:src="@drawable/buttonaddcoffee"
-                android:background="@null"/>
-
-            <TextView
-                android:id="@+id/Affogato"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Affogato ....................... $5.00"
-                android:textSize="22sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginStart="70dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Espresso with vanilla ice-cream"
-                android:textSize="14sp"
-                android:fontFamily="@font/lobster"
-                android:textColor="#F5EDDA"
-                android:layout_marginTop="28dp"
-                android:layout_marginStart="70dp"/>
-        </FrameLayout>
-    </FrameLayout>
 
     <!--Bottom coffee background-->
     <ImageView
-        android:layout_width="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:src="@drawable/bottomcoffeemenu"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerview"
+        app:layout_constrainedHeight="true"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
