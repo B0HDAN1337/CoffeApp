@@ -47,7 +47,7 @@ class activity_ordercart : AppCompatActivity() {
 
         cartItems?.forEach { item ->
             val itemTextView = TextView(this)
-            itemTextView.text = "${item.name}............. \$${"%.2f".format(item.price)}"
+            itemTextView.text = "${item.name}......... \$${"%.2f".format(item.price)}"
             itemTextView.textSize = 30f
             itemTextView.setTypeface(lobster, Typeface.BOLD_ITALIC)
             cartItemsLayout.addView(itemTextView)
